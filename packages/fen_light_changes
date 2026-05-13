@@ -1,3 +1,8 @@
+[COLOR red][B]Version 2.1.31[/B][/COLOR]
+- [NEW] National content: go to Tools > Set Home Country, pick your country, and a dedicated section appears in My Content with popular and top-rated movies and TV from that country.
+- [NEW] Networks browser: for UK, US, AU, CA, DE, FR, JP, KR and more — browse shows by broadcaster (BBC One, ITV, Channel 4, HBO, ABC, etc.).
+- [FIX] Country list had scrambled ISO codes for Germany, France, Finland and Egypt.
+
 [COLOR red][B]Version 2.1.30[/B][/COLOR]
 - [FIX] Downloads now work on Kodi 22 / Python 3.12+ (SSL API fix).
 - [FIX] Sources without a Content-Length header (common debrid streams) now download correctly instead of silently failing.
