@@ -1,3 +1,7 @@
+[COLOR red][B]Version 2.1.29[/B][/COLOR]
+- [FIX] Fanart/background image now correctly updates to Fenlight Gold on existing installs (DB migration fix).
+- [FIX] In-addon changelog updated with missing v2.1.27 and v2.1.28 entries.
+
 [COLOR red][B]Version 2.1.28[/B][/COLOR]
 - [FIX] Fanart/background image throughout addon updated to Fenlight Gold logo.
 
