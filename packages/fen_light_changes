@@ -1,3 +1,7 @@
+[COLOR red][B]Version 2.1.26[/B][/COLOR]
+- [NEW] Rebranded to Fenlight Gold with new logo.
+- [NEW] Updater settings auto-migrate to FenlightGold repo on first run — no manual configuration needed.
+
 [COLOR red][B]Version 2.1.25[/B][/COLOR]
 - [NEW] Updater: Github Branch setting added (Settings > General > Manage Updates). Defaults to 'main'. Change to any branch name to pull updates from a dev/testing branch without merging to main.
 
