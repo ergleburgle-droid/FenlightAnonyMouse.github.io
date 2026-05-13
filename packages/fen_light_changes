@@ -1,3 +1,6 @@
+[COLOR red][B]Version 2.1.28[/B][/COLOR]
+- [FIX] Fanart/background image throughout addon updated to Fenlight Gold logo.
+
 [COLOR red][B]Version 2.1.27[/B][/COLOR]
 - [FIX] Updater no longer offers downgrades — only installs versions higher than current.
 - [FIX] Changelog now visible in addon after update.
