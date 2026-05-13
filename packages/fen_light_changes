@@ -1,3 +1,9 @@
+[COLOR red][B]Version 2.1.27[/B][/COLOR]
+- [FIX] Updater no longer offers downgrades — only installs versions higher than current.
+- [FIX] Changelog now visible in addon after update.
+- [FIX] All updater dialogs rebranded to Fenlight Gold.
+- [FIX] Removed inappropriate message from old changelog.
+
 [COLOR red][B]Version 2.1.26[/B][/COLOR]
 - [NEW] Rebranded to Fenlight Gold with new logo.
 - [NEW] Updater settings auto-migrate to FenlightGold repo on first run — no manual configuration needed.
