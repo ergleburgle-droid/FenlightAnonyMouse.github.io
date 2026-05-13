@@ -1,3 +1,12 @@
+[COLOR red][B]Version 2.3.00[/B][/COLOR]
+- [NEW] Based on upstream v2.2.04: AI-powered "Browse Similar" for movies and TV shows via Google Gemini or Groq (free API keys, Settings > Accounts).
+- [NEW] Anime support: dedicated anime sections in Movies and TV Shows menus.
+- [NEW] AllDebrid cloud history browser.
+- [NEW] TMDb personal lists: Watchlist, Favorites and Recommendations directly in My Content > TMDb Lists.
+- [FIX] "Play + Save" now downloads whatever stream actually ends up playing — works correctly even when the addon falls back to an alternative source.
+- [NEW] MDBList, Simkl, national content and Unified Cloud features carried forward from previous Fenlight Gold versions.
+- [FIX] All OffCloud and EasyDebrid code removed (both services discontinued).
+
 [COLOR red][B]Version 2.1.31[/B][/COLOR]
 - [NEW] National content: go to Tools > Set Home Country, pick your country, and a dedicated section appears in My Content with popular and top-rated movies and TV from that country.
 - [NEW] Networks browser: for UK, US, AU, CA, DE, FR, JP, KR and more — browse shows by broadcaster (BBC One, ITV, Channel 4, HBO, ABC, etc.).
