@@ -1,3 +1,11 @@
+[COLOR red][B]Version 2.3.01[/B][/COLOR]
+- [NEW] TVmaze TV Schedule browser under My Content — no API key required. Browse today's network TV (country-aware), today's streaming, or the full week ahead.
+- [NEW] TVmaze episodes hand off directly to Fenlight scraper pipeline — click any aired episode to find sources and play, just like the rest of the addon (requires TMDb API key).
+- [NEW] Catch Up context menu on schedule items: opens a reversed episode list with tonight's episode pinned at top (gold, non-playable) and all previous episodes fully playable.
+- [FIX] Unaired episodes shown as non-playable (greyed out) rather than offering a broken play action.
+- [FIX] British spellings throughout UI: Authorise, Authorisation, Favourite/Favourites, Colour.
+- [FIX] Naming standardised to "Fenlight Gold" throughout UI (was inconsistently "Fen Light" / "FenLight").
+
 [COLOR red][B]Version 2.3.00[/B][/COLOR]
 - [NEW] Based on upstream v2.2.04: AI-powered "Browse Similar" for movies and TV shows via Google Gemini or Groq (free API keys, Settings > Accounts).
 - [NEW] Anime support: dedicated anime sections in Movies and TV Shows menus.
