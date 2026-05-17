@@ -1,3 +1,10 @@
+[COLOR red][B]Version 2.3.02[/B][/COLOR]
+- [FIX] Source cycling: addon no longer abandons a working stream just because it took more than ~19 seconds to buffer. The 19-second timeout has been removed entirely.
+- [FIX] Only skips to the next source for genuine failures: resolve returned no link, or Kodi reported a stream error. Slow-starting streams are now waited on indefinitely.
+- [NEW] Resolver window now shows live status at every step: which source is being tried (N/M), provider, quality, size, what the addon is doing (resolving / link resolved / no link found / stream did not start), and the filename.
+- [NEW] "No link found" sources show a notification and a brief status message before moving on, so you can see why the skip happened.
+- [NEW] While buffering, the progress bar pulses (rather than counting down to forced abandonment) and the hint "press Right to skip to next source" appears after 8 seconds.
+
 [COLOR red][B]Version 2.3.01[/B][/COLOR]
 - [NEW] TVmaze TV Schedule browser under My Content — no API key required. Browse today's network TV (country-aware), today's streaming, or the full week ahead.
 - [NEW] TVmaze episodes hand off directly to Fenlight scraper pipeline — click any aired episode to find sources and play, just like the rest of the addon (requires TMDb API key).
