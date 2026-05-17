@@ -1,3 +1,9 @@
+[COLOR red][B]Version 2.3.03[/B][/COLOR]
+- [NEW] Real-Debrid and AllDebrid: if a link is not instantly cached, the addon now adds it to the debrid cloud and waits for it to download (up to 5 minutes), then streams it — rather than immediately giving up and trying the next source. Download progress shown live in the resolver window.
+- [NEW] Resolver window shows live download percentage and status during cloud download (Queued / Downloading: 47% / Processing...).
+- [NEW] Cancel check during cloud download: pressing Back immediately stops the wait and moves to the next source cleanly.
+- [INFO] Premiumize and TorBox unchanged — their APIs do not expose a progressive download model suitable for this approach.
+
 [COLOR red][B]Version 2.3.02[/B][/COLOR]
 - [FIX] Source cycling: addon no longer abandons a working stream just because it took more than ~19 seconds to buffer. The 19-second timeout has been removed entirely.
 - [FIX] Only skips to the next source for genuine failures: resolve returned no link, or Kodi reported a stream error. Slow-starting streams are now waited on indefinitely.
