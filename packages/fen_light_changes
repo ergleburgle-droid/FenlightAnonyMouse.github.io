@@ -1,3 +1,8 @@
+[COLOR red][B]Version 2.3.04[/B][/COLOR]
+- [FIX] Real-Debrid regression from 2.3.03: cached sources now resolve correctly again. The original RD link-settling logic (extra settle delay + active-torrent check) has been restored for the cached fast-path — removing it caused unrestrict_link to be called before RD had finalised the direct download URL.
+- [FIX] Null-safety guards added throughout Real-Debrid resolve_magnet: handles None returns from API calls without crashing to the outer exception handler.
+- [FIX] Uncached polling loop also gains a None guard so a temporary API hiccup mid-poll no longer aborts the entire wait.
+
 [COLOR red][B]Version 2.3.03[/B][/COLOR]
 - [NEW] Real-Debrid and AllDebrid: if a link is not instantly cached, the addon now adds it to the debrid cloud and waits for it to download (up to 5 minutes), then streams it — rather than immediately giving up and trying the next source. Download progress shown live in the resolver window.
 - [NEW] Resolver window shows live download percentage and status during cloud download (Queued / Downloading: 47% / Processing...).
