@@ -1,3 +1,6 @@
+[COLOR red][B]Version 2.3.08[/B][/COLOR]
+- [FIX] Free Sources now actually returns sources. The bridge scraper module was named openscrapers_bridge.py but the loader expected openscrapers.py — it silently found nothing every time.
+
 [COLOR red][B]Version 2.3.07[/B][/COLOR]
 - [FIX] Auto-updater now points to the correct repo and branch. Existing installs migrate automatically on next Kodi start — no manual settings changes needed.
 
