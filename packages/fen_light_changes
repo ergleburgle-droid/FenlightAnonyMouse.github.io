@@ -1,3 +1,6 @@
+[COLOR red][B]Version 2.3.10[/B][/COLOR]
+- [DEBUG] Free Sources: added step-by-step diagnostics — notifications and log entries at each stage to identify exactly where scraping fails.
+
 [COLOR red][B]Version 2.3.09[/B][/COLOR]
 - [FIX] Free Sources: if OpenScrapers module is missing, a notification now appears instead of silently returning nothing.
 - [FIX] Free Sources: when ResolveURL is not installed, a broad fallback host list is used so OpenScrapers scrapers don't filter out all results against an empty list.
