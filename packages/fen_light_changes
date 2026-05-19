@@ -1,3 +1,7 @@
+[COLOR red][B]Version 2.3.09[/B][/COLOR]
+- [FIX] Free Sources: if OpenScrapers module is missing, a notification now appears instead of silently returning nothing.
+- [FIX] Free Sources: when ResolveURL is not installed, a broad fallback host list is used so OpenScrapers scrapers don't filter out all results against an empty list.
+
 [COLOR red][B]Version 2.3.08[/B][/COLOR]
 - [FIX] Free Sources now actually returns sources. The bridge scraper module was named openscrapers_bridge.py but the loader expected openscrapers.py — it silently found nothing every time.
 
