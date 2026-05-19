@@ -1,3 +1,6 @@
+[COLOR red][B]Version 2.3.07[/B][/COLOR]
+- [FIX] Auto-updater now points to the correct repo and branch. Existing installs migrate automatically on next Kodi start — no manual settings changes needed.
+
 [COLOR red][B]Version 2.3.06[/B][/COLOR]
 - [FIX] Free Sources toggle now appears correctly in Settings > Sources Accounts. The setting was wired into the backend but missing from the settings UI XML entirely.
 - [FIX] Enabling Free Sources for the first time now checks for required dependencies (BeautifulSoup4, OpenScrapers, ResolveURL) and offers to install any that are missing via Kodi's addon installer.
