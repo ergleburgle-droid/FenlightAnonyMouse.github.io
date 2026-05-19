@@ -1,3 +1,7 @@
+[COLOR red][B]Version 2.3.06[/B][/COLOR]
+- [FIX] Free Sources toggle now appears correctly in Settings > Sources Accounts. The setting was wired into the backend but missing from the settings UI XML entirely.
+- [FIX] Enabling Free Sources for the first time now checks for required dependencies (BeautifulSoup4, OpenScrapers, ResolveURL) and offers to install any that are missing via Kodi's addon installer.
+
 [COLOR red][B]Version 2.3.05[/B][/COLOR]
 - [NEW] Free Sources via OpenScrapers: if script.module.openscrapers and script.module.resolveurl are installed, a "Free Sources" provider appears in Settings alongside Real-Debrid, Easynews, etc. Free sources scrape 50+ sites and resolve via ResolveURL's 300+ hoster library — no subscription needed. Off by default; enable in Settings > Sources > Free Sources.
 - [NEW] Free sources integrate fully into the existing source picker and resolver UI — labelled clearly (e.g. FILEMOON | 1080p), sorted below debrid sources, and skip gracefully if resolution fails.
