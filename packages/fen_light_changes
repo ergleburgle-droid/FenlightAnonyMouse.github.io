@@ -1,3 +1,6 @@
+[COLOR red][B]Version 2.3.11[/B][/COLOR]
+- [INFO] Free Sources (OpenScrapers) removed. The feature is shelved for now due to dependency chain issues — will revisit with a better approach later.
+
 [COLOR red][B]Version 2.3.10[/B][/COLOR]
 - [DEBUG] Free Sources: added step-by-step diagnostics — notifications and log entries at each stage to identify exactly where scraping fails.
 
