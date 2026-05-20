@@ -1,3 +1,108 @@
+[COLOR red][B]Version 2.3.11[/B][/COLOR]
+- [INFO] Free Sources (OpenScrapers) removed. The feature is shelved for now due to dependency chain issues — will revisit with a better approach later.
+
+[COLOR red][B]Version 2.3.10[/B][/COLOR]
+- [DEBUG] Free Sources: added step-by-step diagnostics — notifications and log entries at each stage to identify exactly where scraping fails.
+
+[COLOR red][B]Version 2.3.09[/B][/COLOR]
+- [FIX] Free Sources: if OpenScrapers module is missing, a notification now appears instead of silently returning nothing.
+- [FIX] Free Sources: when ResolveURL is not installed, a broad fallback host list is used so OpenScrapers scrapers don't filter out all results against an empty list.
+
+[COLOR red][B]Version 2.3.08[/B][/COLOR]
+- [FIX] Free Sources now actually returns sources. The bridge scraper module was named openscrapers_bridge.py but the loader expected openscrapers.py — it silently found nothing every time.
+
+[COLOR red][B]Version 2.3.07[/B][/COLOR]
+- [FIX] Auto-updater now points to the correct repo and branch. Existing installs migrate automatically on next Kodi start — no manual settings changes needed.
+
+[COLOR red][B]Version 2.3.06[/B][/COLOR]
+- [FIX] Free Sources toggle now appears correctly in Settings > Sources Accounts. The setting was wired into the backend but missing from the settings UI XML entirely.
+- [FIX] Enabling Free Sources for the first time now checks for required dependencies (BeautifulSoup4, OpenScrapers, ResolveURL) and offers to install any that are missing via Kodi's addon installer.
+
+[COLOR red][B]Version 2.3.05[/B][/COLOR]
+- [NEW] Free Sources via OpenScrapers: if script.module.openscrapers and script.module.resolveurl are installed, a "Free Sources" provider appears in Settings alongside Real-Debrid, Easynews, etc. Free sources scrape 50+ sites and resolve via ResolveURL's 300+ hoster library — no subscription needed. Off by default; enable in Settings > Sources > Free Sources.
+- [NEW] Free sources integrate fully into the existing source picker and resolver UI — labelled clearly (e.g. FILEMOON | 1080p), sorted below debrid sources, and skip gracefully if resolution fails.
+- [INFO] Zero impact if OpenScrapers/ResolveURL are not installed — all existing functionality unchanged.
+
+[COLOR red][B]Version 2.3.04[/B][/COLOR]
+- [FIX] Real-Debrid regression from 2.3.03: cached sources now resolve correctly again. The original RD link-settling logic (extra settle delay + active-torrent check) has been restored for the cached fast-path — removing it caused unrestrict_link to be called before RD had finalised the direct download URL.
+- [FIX] Null-safety guards added throughout Real-Debrid resolve_magnet: handles None returns from API calls without crashing to the outer exception handler.
+- [FIX] Uncached polling loop also gains a None guard so a temporary API hiccup mid-poll no longer aborts the entire wait.
+
+[COLOR red][B]Version 2.3.03[/B][/COLOR]
+- [NEW] Real-Debrid and AllDebrid: if a link is not instantly cached, the addon now adds it to the debrid cloud and waits for it to download (up to 5 minutes), then streams it — rather than immediately giving up and trying the next source. Download progress shown live in the resolver window.
+- [NEW] Resolver window shows live download percentage and status during cloud download (Queued / Downloading: 47% / Processing...).
+- [NEW] Cancel check during cloud download: pressing Back immediately stops the wait and moves to the next source cleanly.
+- [INFO] Premiumize and TorBox unchanged — their APIs do not expose a progressive download model suitable for this approach.
+
+[COLOR red][B]Version 2.3.02[/B][/COLOR]
+- [FIX] Source cycling: addon no longer abandons a working stream just because it took more than ~19 seconds to buffer. The 19-second timeout has been removed entirely.
+- [FIX] Only skips to the next source for genuine failures: resolve returned no link, or Kodi reported a stream error. Slow-starting streams are now waited on indefinitely.
+- [NEW] Resolver window now shows live status at every step: which source is being tried (N/M), provider, quality, size, what the addon is doing (resolving / link resolved / no link found / stream did not start), and the filename.
+- [NEW] "No link found" sources show a notification and a brief status message before moving on, so you can see why the skip happened.
+- [NEW] While buffering, the progress bar pulses (rather than counting down to forced abandonment) and the hint "press Right to skip to next source" appears after 8 seconds.
+
+[COLOR red][B]Version 2.3.01[/B][/COLOR]
+- [NEW] TVmaze TV Schedule browser under My Content — no API key required. Browse today's network TV (country-aware), today's streaming, or the full week ahead.
+- [NEW] TVmaze episodes hand off directly to Fenlight scraper pipeline — click any aired episode to find sources and play, just like the rest of the addon (requires TMDb API key).
+- [NEW] Catch Up context menu on schedule items: opens a reversed episode list with tonight's episode pinned at top (gold, non-playable) and all previous episodes fully playable.
+- [FIX] Unaired episodes shown as non-playable (greyed out) rather than offering a broken play action.
+- [FIX] British spellings throughout UI: Authorise, Authorisation, Favourite/Favourites, Colour.
+- [FIX] Naming standardised to "Fenlight Gold" throughout UI (was inconsistently "Fen Light" / "FenLight").
+
+[COLOR red][B]Version 2.3.00[/B][/COLOR]
+- [NEW] Based on upstream v2.2.04: AI-powered "Browse Similar" for movies and TV shows via Google Gemini or Groq (free API keys, Settings > Accounts).
+- [NEW] Anime support: dedicated anime sections in Movies and TV Shows menus.
+- [NEW] AllDebrid cloud history browser.
+- [NEW] TMDb personal lists: Watchlist, Favourites and Recommendations directly in My Content > TMDb Lists.
+- [FIX] "Play + Save" now downloads whatever stream actually ends up playing — works correctly even when the addon falls back to an alternative source.
+- [NEW] MDBList, Simkl, national content and Unified Cloud features carried forward from previous Fenlight Gold versions.
+- [FIX] All OffCloud and EasyDebrid code removed (both services discontinued).
+
+[COLOR red][B]Version 2.1.31[/B][/COLOR]
+- [NEW] National content: go to Tools > Set Home Country, pick your country, and a dedicated section appears in My Content with popular and top-rated movies and TV from that country.
+- [NEW] Networks browser: for UK, US, AU, CA, DE, FR, JP, KR and more — browse shows by broadcaster (BBC One, ITV, Channel 4, HBO, ABC, etc.).
+- [FIX] Country list had scrambled ISO codes for Germany, France, Finland and Egypt.
+
+[COLOR red][B]Version 2.1.30[/B][/COLOR]
+- [FIX] Downloads now work on Kodi 22 / Python 3.12+ (SSL API fix).
+- [FIX] Sources without a Content-Length header (common debrid streams) now download correctly instead of silently failing.
+- [FIX] File handle now always closed after download completes, fails, or is cancelled.
+- [NEW] "Play + Save" in source picker context menu — stream and download simultaneously.
+
+[COLOR red][B]Version 2.1.29[/B][/COLOR]
+- [FIX] Fanart/background image now correctly updates to Fenlight Gold on existing installs (DB migration fix).
+- [FIX] In-addon changelog updated with missing v2.1.27 and v2.1.28 entries.
+
+[COLOR red][B]Version 2.1.28[/B][/COLOR]
+- [FIX] Fanart/background image throughout addon updated to Fenlight Gold logo.
+
+[COLOR red][B]Version 2.1.27[/B][/COLOR]
+- [FIX] Updater no longer offers downgrades — only installs versions higher than current.
+- [FIX] Changelog now visible in addon after update.
+- [FIX] All updater dialogs rebranded to Fenlight Gold.
+- [FIX] Removed inappropriate message from old changelog.
+
+[COLOR red][B]Version 2.1.26[/B][/COLOR]
+- [NEW] Rebranded to Fenlight Gold with new logo.
+- [NEW] Updater settings auto-migrate to FenlightGold repo on first run — no manual configuration needed.
+
+[COLOR red][B]Version 2.1.25[/B][/COLOR]
+- [NEW] Updater: Github Branch setting added (Settings > General > Manage Updates). Defaults to 'main'. Change to any branch name to pull updates from a dev/testing branch without merging to main.
+
+[COLOR red][B]Version 2.1.24[/B][/COLOR]
+- [NEW] MDBList integration: browse curated movie/TV lists via your free MDBList API key (Settings > Accounts > MDBList).
+- [NEW] Simkl integration: browse trending/popular content and your Simkl watchlist. Register a free app at simkl.com/apps to get your Client ID, then authorize via Settings > Accounts > Simkl.
+- [NEW] Unified cloud browser: when two or more debrid services are authorized, an "All Clouds" entry appears in Premium section aggregating all folders in one view.
+- [NEW] First-run setup wizard: on first launch, users with no TMDb API key configured are shown a step-by-step setup dialog.
+- [NEW] Settings UI entries for MDBList API key and Simkl Client ID / Authorize / Revoke.
+- [FIX] Improved TMDb API error messages: 401 Unauthorized now shows instructions to set an API key; 429 rate-limit errors are logged clearly.
+
+[COLOR red][B]Version 2.1.23[/B][/COLOR]
+- [FIX] Removed hardcoded revoked TMDb API key. Users must now supply their own free TMDb API key in Settings > Accounts.
+- [FIX] TMDb v4 Read Access Token is now a user-configurable setting (Settings > Accounts) instead of a hardcoded revoked token. Required for TMDb Lists auth.
+- [FIX] TMDb Lists auth and revoke flows now validate token availability and show clear setup instructions if not configured.
+- [FIX] Trakt sync no longer incorrectly skips activity checks for users without an account linked (trakt_user_active function call fix).
+
 [COLOR red][B]Version 2.1.22[/B][/COLOR]
 - [REQUEST] Added custom poster/fanart for Personal Lists. This means for the list itself. Found within the "Edit Properties" context menu item.
 - [CODE] A fair few fixes for small bugs throughout addon.
